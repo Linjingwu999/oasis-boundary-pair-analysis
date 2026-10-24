@@ -18,7 +18,7 @@ Python 3.13.9 was used with NumPy 2.3.5, SciPy 1.16.3, pandas 2.3.3, scikit-lear
 The training and evaluation tables must each contain `pair_id`, `endpoint_id`, `endpoint_role`, `expected_label`, and the 18 feature columns defined in `src/oasis_pair_analysis.py`. Each pair must contain exactly two unique endpoints, one with expected label 0 and one with expected label 1. Pair identities are joined by key rather than row position. Samples used for independent evaluation must not occur in the training table, and both endpoints from a pair must remain in the same data split.
 
 ```bash
-python scripts/train_model.py --input training_endpoints.csv --model-out model.joblib --audit-out training_audit.json --expected-pairs 1500
+python scripts/train_model.py --input training_endpoints.csv --model-out model.joblib --audit-out training_audit.json
 python scripts/evaluate_model.py --input independent_evaluation_endpoints.csv --model model.joblib --summary-out evaluation_summary.json --pairs-out pair_results.csv
 ```
 
